@@ -5,11 +5,11 @@ const cors = require("cors")({
 });
 // http request
 exports.checkout = functions.https.onRequest((req, res) => {
-  console.log("test")
+  
   cors(req, res, async () => {
-    //this.checkout.use(cors);
+    console.log("test")
     const stripe = require("stripe")(functions.config().stripe.secret_key);
-    console.log(req.body);
+    //console.log(req.body);
     const items = req.body.items;
     let lineItems = [];
     items.forEach((item) => {
