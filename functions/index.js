@@ -7,7 +7,7 @@ const cors = require("cors")({
 exports.checkout = functions.https.onRequest((req, res) => {
   
   cors(req, res, async () => {
-    console.log("test")
+    //console.log("test")
     const stripe = require("stripe")(functions.config().stripe.secret_key);
     //console.log(req.body);
     const items = req.body.items;
