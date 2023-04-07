@@ -5,6 +5,7 @@ const cors = require("cors")({
 });
 // http request
 exports.checkout = functions.https.onRequest((req, res) => {
+  console.log("test")
   cors(req, res, async () => {
     //this.checkout.use(cors);
     const stripe = require("stripe")(functions.config().stripe.secret_key);
